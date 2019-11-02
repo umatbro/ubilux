@@ -7,7 +7,7 @@ from envparse import Env
 
 load_dotenv()
 env = Env(
-    HOST=dict(cast=str, default='127.0.0.1'),
+    HOST=dict(cast=str, default='0.0.0.0'),
     PORT=dict(cast=int, default=8000),
     DEBUG=dict(cast=bool, default=False),
     ACCESS_LOG=dict(cast=bool, default=False),
@@ -26,6 +26,8 @@ async def index(request: Request) -> HTTPResponse:
 
 if __name__ == '__main__':
     app.run(
-        host='0.0.0.0',
+        host=app.config.HOST,
         port=app.config.PORT,
+        debug=app.config.DEBUG,
+        access_log=app.config.ACCESS_LOG,
     )
