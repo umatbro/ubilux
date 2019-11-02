@@ -5,6 +5,8 @@ from sanic.response import json
 from dotenv import load_dotenv
 from envparse import Env
 
+from app.router import Router
+
 load_dotenv()
 env = Env(
     HOST=dict(cast=str, default='0.0.0.0'),
@@ -17,6 +19,7 @@ app = Sanic()
 app.config.update(
     {key: env(key) for key in env.schema.keys()}
 )
+
 
 
 @app.route('/')
