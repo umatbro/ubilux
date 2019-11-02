@@ -4,8 +4,7 @@ from sanic.response import HTTPResponse
 from sanic.response import json
 from dotenv import load_dotenv
 from envparse import Env
-
-from app.router import Router
+from app import handlers
 
 load_dotenv()
 env = Env(
@@ -21,10 +20,11 @@ app.config.update(
 )
 
 
-
 @app.route('/')
 async def index(request: Request) -> HTTPResponse:
     return json({'hello': 'world'})
+
+app.add_websocket_route(handlers.switch_status, '/switch')
 
 
 if __name__ == '__main__':
