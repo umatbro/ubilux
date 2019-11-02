@@ -6,6 +6,9 @@ authors = ["umatbro <umatbroo@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.7"
+sanic = "^19.9"
+python-dotenv = "^0.10.3"
+envparse = "^0.2.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^3.0"
