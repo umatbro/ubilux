@@ -1,7 +1,7 @@
 from decouple import config
 from dotenv import load_dotenv
 
-from redis import ConnectionPool
+from redis import ConnectionPool, Redis
 
 load_dotenv()
 
@@ -19,3 +19,6 @@ REDIS_POOL = ConnectionPool(
     port=REDIS_PORT,
     db=REDIS_DB,
 )
+_r = Redis(connection_pool=REDIS_POOL)
+_r.ping()
+_r.close()
