@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  redis:
+    image: redis:5.0-alpine
+    ports:
+      - 6337:6379
+    command: ["redis-server", "--notify-keyspace-events", "K$$"]
