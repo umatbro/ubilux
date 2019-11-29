@@ -1,10 +1,9 @@
 import os
 
 from decouple import config
-
 from redis import ConnectionPool, Redis
 
-BASE_DIR = os.path.abspath(__file__)
+BASE_DIR = os.path.dirname(__file__)
 
 
 HOST = config('HOST', default='0.0.0.0')
