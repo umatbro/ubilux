@@ -1,9 +1,9 @@
-from decouple import config
-from dotenv import load_dotenv
+import os
 
+from decouple import config
 from redis import ConnectionPool, Redis
 
-load_dotenv()
+BASE_DIR = os.path.dirname(__file__)
 
 
 HOST = config('HOST', default='0.0.0.0')
@@ -19,6 +19,10 @@ REDIS_POOL = ConnectionPool(
     port=REDIS_PORT,
     db=REDIS_DB,
 )
-_r = Redis(connection_pool=REDIS_POOL)
-_r.ping()
-_r.close()
+
+
+def check_redis_connection():
+    r = Redis(connection_pool=REDIS_POOL)
+    r.ping()
+    r.close()
+    return True
