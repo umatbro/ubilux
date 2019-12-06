@@ -27,9 +27,10 @@ async def test_get_status(test_cli: TestClient):
     ws_listen = await test_cli.ws_connect('/listen')
     ws_switch = await test_cli.ws_connect('/switch')
     init_status = await ws_listen.receive()
-    ws_listen.close()
+    await ws_listen.close()
     assert init_status.data == '0'
     await ws_switch.send_str('1')
+    ws_listen = await test_cli.ws_connect('/listen')
     end_status = await ws_listen.receive()
     assert end_status.data == '1'
 
