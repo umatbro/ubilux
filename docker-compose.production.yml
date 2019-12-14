@@ -1,0 +1,13 @@
+version: "3.0"
+
+services:
+  app:
+    image: "umat/ubilux:latest"
+    env_file:
+      - ".env"
+  redis:
+    image: "redis:5.0-alpine"
+    ports:
+      - 6739:6739
+    command: ["redis-server", "--notify-keyspace-events", "K$$"]
+  nginx: 3
