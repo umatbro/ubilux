@@ -1,5 +1,12 @@
-.env
-venv
+.env*
+venv*
 .gitignore
 .idea
 .vscode
+app.yaml
+.pre-commit-config
+docker-compose*
+.isort
+tests/
+nginx/
+requirements.txt
