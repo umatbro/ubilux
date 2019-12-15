@@ -102,6 +102,14 @@ version = "0.4.1"
 
 [[package]]
 category = "main"
+description = "Handle .env files"
+name = "dotenv"
+optional = false
+python-versions = "*"
+version = "0.0.5"
+
+[[package]]
+category = "main"
 description = "A pure-Python, bring-your-own-I/O implementation of HTTP/1.1"
 name = "h11"
 optional = false
@@ -452,7 +460,7 @@ version = "0.6.0"
 more-itertools = "*"
 
 [metadata]
-content-hash = "46eff54242edcd8e2426f8b1e44696353016d67235c7637292de72fbfe5bdadd"
+content-hash = "a2848936809972937210c5f9f0cd774e2a4e8e3454398632df09ba111e3d61da"
 python-versions = "^3.7"
 
 [metadata.hashes]
@@ -467,6 +475,7 @@ certifi = ["e4f3620cfea4f83eedc95b24abd9cd56f3c4b146dd0177e83a21b4eb49e21e50", "
 cfgv = ["edb387943b665bf9c434f717bf630fa78aecd53d5900d2e05da6ad6048553144", "fbd93c9ab0a523bf7daec408f3be2ed99a980e20b2d19b50fc184ca6b820d289"]
 chardet = ["84ab92ed1c4d4f16916e05906b6b75a6c0fb5db821cc65e70cbd64a3e2a5eaae", "fc323ffcaeaed0e0a02bf4d117757b98aed530d9ed4531e3e15460124c106691"]
 colorama = ["05eed71e2e327246ad6b38c540c4a3117230b19679b875190486ddd2d721422d", "f8ac84de7840f5b9c4e3347b3c1eaa50f7e49c2b07596221daec5edaabbd7c48"]
+dotenv = ["b58d2ab3f83dbd4f8a362b21158a606bee87317a9444485566b3c8f0af847091"]
 h11 = ["acca6a44cb52a32ab442b1779adf0875c443c689e9e028f8d831a3769f9c5208", "f2b1ca39bfed357d1f19ac732913d5f9faa54a5062eca7d2ec3a916cfb7ae4c7"]
 h2 = ["ac377fcf586314ef3177bfd90c12c7826ab0840edeb03f0f24f511858326049e", "b8a32bd282594424c0ac55845377eea13fa54fe4a8db012f3a198ed923dc3ab4"]
 hpack = ["0edd79eda27a53ba5be2dfabf3b15780928a0dff6eb0c60a3d6767720e970c89", "8eec9c1f4bfae3408a3f30500261f7e6a65912dc138526ea054f9ad98892e9d2"]
