@@ -6,3 +6,14 @@ services:
     ports:
       - 6337:6379
     command: ["redis-server", "--notify-keyspace-events", "K$$"]
+  test:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        environment: test
+    command: "pytest"
+    environment:
+      REDIS_HOST: redis
+    depends_on:
+      - redis

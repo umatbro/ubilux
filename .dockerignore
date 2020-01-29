@@ -1,5 +1,7 @@
-.env
-venv
+.env*
+venv*
 .gitignore
 .idea
 .vscode
+.pytest_cache
+docker-compose*
