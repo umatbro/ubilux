@@ -10,6 +10,6 @@ blocks:
       jobs:
         - name: pytest
           commands:
-            - sem-version python $PYTHON_VERSION
+            - sem-version python 3.7
             - checkout
             - docker-compose -f docker-compose.test.yml run
