@@ -1,21 +1,7 @@
 import asyncio
 
-import pytest
 from pytest_sanic.utils import TestClient
 from sanic.testing import SanicTestClient
-from sanic.websocket import WebSocketProtocol
-
-from main import app as s_app
-
-
-@pytest.fixture()
-def app():
-    yield s_app
-
-
-@pytest.fixture()
-def test_cli(loop, app, sanic_client) -> TestClient:
-    return loop.run_until_complete(sanic_client(app, protocol=WebSocketProtocol))
 
 
 async def test_index_returns_404(test_cli: SanicTestClient):
