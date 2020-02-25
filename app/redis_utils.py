@@ -18,5 +18,12 @@ def redis_connect() -> Redis:
 def check_redis_connection():
     r = redis_connect()
     r.ping()
+
+    # keyspace events are required for listening status change.
+    # Redis should be run with the following command:
+    # redis-server --notify-keyspace-events K$$
+    keyspace_events = r.config_get('notify-keyspace-events').get('notify-keyspace-events')
+    assert '$' in keyspace_events
+    assert 'K' in keyspace_events
     r.close()
     return True
