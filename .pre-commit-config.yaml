@@ -10,7 +10,11 @@ repos:
       args:
         - --max-line=120
     - id: trailing-whitespace
--   repo: https://github.com/pre-commit/mirrors-isort
-    rev: 'v4.3.21'
-    hooks:
-    -   id: isort
+- repo: https://github.com/pre-commit/mirrors-isort
+  rev: 'v4.3.21'
+  hooks:
+    - id: isort
+- repo: https://github.com/ambv/black
+  rev: '19.10b0'
+  hooks:
+    - id: black
