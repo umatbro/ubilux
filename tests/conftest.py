@@ -11,9 +11,9 @@ from main import app as s_app
 @pytest.fixture
 def test_config():
     class Config:
-        REDIS_HOST = os.environ.get('TEST_REDIS_HOST', '127.0.0.1')
-        REDIS_PORT = os.environ.get('TEST_REDIS_PORT', '6337')
-        REDIS_DB = os.environ.get('TEST_REDIS_DB', '0')
+        REDIS_HOST = os.environ.get("TEST_REDIS_HOST", "127.0.0.1")
+        REDIS_PORT = os.environ.get("TEST_REDIS_PORT", "6337")
+        REDIS_DB = os.environ.get("TEST_REDIS_DB", "0")
 
     return Config
 
