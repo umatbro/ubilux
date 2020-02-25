@@ -1,0 +1,20 @@
+# This is an example file that can be used to deploy app on AppEngine
+entrypoint: python main.py
+
+# The runtime: custom entry tells App Engine to look for a Dockerfile that will define
+# your runtime's image and env: flex specifies that you are deploying to the flexible environment.
+# in this case flex environment is the only one that supports websockets.
+# https://cloud.google.com/appengine/docs/flexible/custom-runtimes/quickstart
+runtime: custom
+env: flex
+
+instance_class: F1
+env_variables:
+  REDIS_HOST: redis_host
+  REDIS_PASSWORD: password
+  REDIS_PORT: 6379
+automatic_scaling:
+  min_num_instances: 1
+  max_num_instances: 1
+  cpu_utilization:
+    target_utilization: 0.5
