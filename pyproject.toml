@@ -17,5 +17,5 @@ pre-commit = "^1.18"
 pytest-sanic = "^1.1"
 
 [build-system]
-requires = ["poetry>=0.12"]
+requires = ["poetry==0.12.17"]
 build-backend = "poetry.masonry.api"

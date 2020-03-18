@@ -1,0 +1,19 @@
+version: v1.0
+name: Deploy
+
+agent:
+  machine:
+    type: e1-standard-2
+    os_image: ubuntu1804
+blocks:
+  - name: Deploy to prod
+    task:
+      secrets:
+        - name: ubilux-backend-gcloud
+      jobs:
+        - name: 'Run gcloud deploy'
+          commands:
+            - checkout
+            - mv ~/production-app.yml ./app.yaml
+            - gcloud auth activate-service-account $SERVICE_ACCOUNT --key-file ~/service-account-key.json --project $PROJECT_NAME
+            - gcloud app deploy -q

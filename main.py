@@ -4,16 +4,16 @@ from sanic import Sanic
 import settings
 from app import handlers
 
-load_dotenv('.env-test')
+load_dotenv(".env-test")
 
 app = Sanic()
 app.config.from_object(settings)
 
-app.add_websocket_route(handlers.switch_status, '/switch')
-app.add_websocket_route(handlers.subscribe_to_switch_status, '/listen')
+app.add_websocket_route(handlers.switch_status, "/switch")
+app.add_websocket_route(handlers.subscribe_to_switch_status, "/listen")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     from app.redis_utils import check_redis_connection
 
     check_redis_connection()
